@@ -1,0 +1,343 @@
+<title>TSL.pk — Speedometer Experts</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="assets/css/style.css?v=10">
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-gauge">
+    <svg id="gaugeSvg" viewBox="0 0 300 300"></svg>
+    <div class="loader-center">
+      <div class="loader-speed" id="loaderSpeed">0</div>
+      <div class="loader-label">KM/H</div>
+    </div>
+  </div>
+  <div class="loader-brand">T S L . P K</div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <svg class="logo-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="lgNavBez" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#5b6577"/>
+            <stop offset="55%" stop-color="#262c3b"/>
+            <stop offset="100%" stop-color="#0a0d13"/>
+          </radialGradient>
+          <linearGradient id="lgNavDial" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#ff5b46"/>
+            <stop offset="100%" stop-color="#ffb020"/>
+          </linearGradient>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="url(#lgNavBez)"/>
+        <circle cx="32" cy="32" r="30" fill="none" stroke="#000" stroke-opacity="0.35" stroke-width="1"/>
+        <circle cx="32" cy="32" r="23" fill="#12161f"/>
+        <circle cx="32" cy="32" r="23" fill="none" stroke="url(#lgNavDial)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="95 145" transform="rotate(125 32 32)"/>
+        <g stroke="#8b93a6" stroke-width="1.4" stroke-linecap="round">
+          <line x1="32" y1="13" x2="32" y2="17"/>
+          <line x1="51" y1="32" x2="47" y2="32"/>
+          <line x1="13" y1="32" x2="17" y2="32"/>
+        </g>
+        <line x1="32" y1="32" x2="41" y2="21" stroke="url(#lgNavDial)" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="32" cy="32" r="4.5" fill="url(#lgNavDial)"/>
+        <path d="M10 22 A28 28 0 0 1 54 22" fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      TSL<span class="dot">.</span>PK
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#home" data-nav="home" class="active">Home</a>
+      <a href="products.html" data-nav="products-preview">Products</a>
+      <a href="gallery.html" data-nav="gallery-preview">Gallery</a>
+      <a href="index.html#services" data-nav="services">Services</a>
+      <a href="index.html#contact" data-nav="contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <video class="hero-bg-video" autoplay muted loop playsinline id="heroBgVideo" src="assets/videos/work-2.mp4"></video>
+  <div class="hero-bg-overlay"></div>
+  <div class="container hero-grid">
+    <div>
+      <h1>Pakistan's Trusted <span>Speedometer</span> Specialists</h1>
+      <p>Repair, programming, fitting, diagnostics & testing of car speedometers — with nationwide delivery all across Pakistan. Genuine work, honest pricing.</p>
+      <div class="hero-actions">
+        <a href="products.html" class="btn btn-accent">🛒 Browse Products</a>
+        <a href="#" class="btn btn-whatsapp" onclick="genericWhatsapp();return false;">💬 Chat on WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="n">5000+</div><div class="l">Meters Repaired</div></div>
+      <div class="stat"><div class="n">10+ Yrs</div><div class="l">Industry Experience</div></div>
+      <div class="stat"><div class="n">100%</div><div class="l">Pakistan Delivery</div></div>
+      <div class="stat"><div class="n">4.9★</div><div class="l">Customer Rating</div></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="review-hmarquee-wrap">
+      <div class="review-hmarquee-fade left"></div>
+      <div class="review-hmarquee" id="heroReviewMarquee">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Meri Honda Civic ka speedometer kaafi arsay se kharab tha, kai jaga dikhaya lekin sahi nahi hua. TSL waalon ne ek din mein perfect repair kar diya aur warranty bhi di. Highly recommended!"</p>
+          <div class="review-author">
+            <div class="review-avatar">AR</div>
+            <div><div class="review-name">Ahmed Raza</div><div class="review-city">Lahore</div></div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Order online kiya tha Karachi se, payment ke baad next day hi speedometer mil gaya. Packaging bhi bohat achi thi aur product bilkul genuine tha. Bohat shukriya TSL team!"</p>
+          <div class="review-author">
+            <div class="review-avatar">BF</div>
+            <div><div class="review-name">Bilal Farooq</div><div class="review-city">Karachi</div></div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Diagnostics se le kar fitting tak sara kaam professional tha. Rate bhi market se kaafi behtar the. Ab main apni saari gaadiyon ka kaam yahin se karwata hoon."</p>
+          <div class="review-author">
+            <div class="review-avatar">UK</div>
+            <div><div class="review-name">Usman Khalid</div><div class="review-city">Islamabad</div></div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"WhatsApp par order dena bohat easy tha, sawalon ka jawab bhi turant milta hai. Speedometer conversion ka kaam bilkul original jaisa laga. Thank you TSL.pk!"</p>
+          <div class="review-author">
+            <div class="review-avatar">SM</div>
+            <div><div class="review-name">Sana Malik</div><div class="review-city">Faisalabad</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="review-hmarquee-fade right"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="section" id="products-preview">
+  <div class="container">
+    <div class="section-head">
+      <h2>Featured Products</h2>
+      <p>Handpicked speedometers ready for delivery.</p>
+    </div>
+    <div class="products-grid" id="featuredProducts"></div>
+    <div style="text-align:center;margin-top:36px;">
+      <a href="products.html" class="btn btn-outline">View All Products →</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY PREVIEW -->
+<section class="section" id="gallery-preview" style="background:var(--bg-alt);">
+  <div class="container">
+    <div class="section-head">
+      <h2>Our Work Gallery</h2>
+      <p>A glimpse of real speedometer repairs we've completed.</p>
+    </div>
+    <div class="gallery-grid" id="homeGalleryPreview"></div>
+    <div style="text-align:center;margin-top:36px;">
+      <a href="gallery.html" class="btn btn-outline">View Full Gallery →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <h2>Our Services</h2>
+      <p>Complete solutions for all your speedometer needs.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-icon">🛠️</div><h3>Speedometer Repair</h3><p>Complete diagnosis & repair of digital and analog speedometers for all car makes.</p></div>
+      <div class="service-card"><div class="service-icon">💻</div><h3>Programming</h3><p>Speedometer programming, odometer correction, and key/immobilizer matching.</p></div>
+      <div class="service-card"><div class="service-icon">🔁</div><h3>Speedometer Repair Kit</h3><p>Complete repair kit and parts replacement for faulty speedometer units.</p></div>
+      <div class="service-card"><div class="service-icon">🔧</div><h3>Fitting Service</h3><p>Professional fitting of new or repaired speedometers with proper testing before handover.</p></div>
+      <div class="service-card"><div class="service-icon">📟</div><h3>Diagnostics & Testing</h3><p>Full diagnostic scan to identify faults before repair — no guesswork, only facts.</p></div>
+      <div class="service-card"><div class="service-icon">🚚</div><h3>Nationwide Delivery</h3><p>We deliver repaired & new meters anywhere in Pakistan via trusted courier services.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>How Ordering Works</h2>
+      <p>Simple, fast, and secure — from selection to delivery.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h4>Select Product</h4><p>Browse our catalog and choose the meter you need.</p></div>
+      <div class="step"><div class="n">2</div><h4>Place Order</h4><p>Fill your details and get our bank account for payment.</p></div>
+      <div class="step"><div class="n">3</div><h4>Send Screenshot</h4><p>Pay & send the payment screenshot on WhatsApp with order details.</p></div>
+      <div class="step"><div class="n">4</div><h4>Nationwide Delivery</h4><p>We dispatch your order across Pakistan via courier.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Need Help With Your Car's Meter?</h2>
+      <p>Chat with our team directly on WhatsApp for quotes, queries or booking a repair.</p>
+      <a href="#" class="btn btn-whatsapp" onclick="genericWhatsapp();return false;">💬 Message Us Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:14px;">
+          <svg class="logo-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="lgFootBez" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#5b6577"/>
+            <stop offset="55%" stop-color="#262c3b"/>
+            <stop offset="100%" stop-color="#0a0d13"/>
+          </radialGradient>
+          <linearGradient id="lgFootDial" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#ff5b46"/>
+            <stop offset="100%" stop-color="#ffb020"/>
+          </linearGradient>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="url(#lgFootBez)"/>
+        <circle cx="32" cy="32" r="30" fill="none" stroke="#000" stroke-opacity="0.35" stroke-width="1"/>
+        <circle cx="32" cy="32" r="23" fill="#12161f"/>
+        <circle cx="32" cy="32" r="23" fill="none" stroke="url(#lgFootDial)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="95 145" transform="rotate(125 32 32)"/>
+        <g stroke="#8b93a6" stroke-width="1.4" stroke-linecap="round">
+          <line x1="32" y1="13" x2="32" y2="17"/>
+          <line x1="51" y1="32" x2="47" y2="32"/>
+          <line x1="13" y1="32" x2="17" y2="32"/>
+        </g>
+        <line x1="32" y1="32" x2="41" y2="21" stroke="url(#lgFootDial)" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="32" cy="32" r="4.5" fill="url(#lgFootDial)"/>
+        <path d="M10 22 A28 28 0 0 1 54 22" fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+          TSL<span class="dot">.</span>PK
+        </div>
+        <p>Pakistan's trusted speedometer repair, programming and fitting specialists with nationwide delivery.</p>
+        <div class="social-icons">
+          <a id="fbLink" href="#" target="_blank">📘</a>
+          <a id="igLink" href="#" target="_blank"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+          <a id="ytLink" href="#" target="_blank">▶️</a>
+          <a id="ttLink" href="#" target="_blank">🎵</a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="index.html#services">Repair</a>
+        <a href="index.html#services">Programming</a>
+        <a href="index.html#services">Fitting</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p id="footerPhone">📞 Loading...</p>
+        <p id="footerAddress">📍 Loading...</p>
+        <a href="admin.html">Admin Login</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 TSL.pk — All Rights Reserved.</div>
+  </div>
+</footer>
+
+<!-- VIDEO PLAYER MODAL -->
+<div class="modal-backdrop" id="videoPlayerBackdrop">
+  <div class="modal" style="max-width:90vw;width:auto;padding:16px;max-height:92vh;display:flex;flex-direction:column;overflow:hidden;">
+    <span class="close" id="videoPlayerClose">&times;</span>
+    <video id="videoPlayerEl" controls autoplay style="max-height:82vh;max-width:100%;width:auto;border-radius:10px;display:block;margin:0 auto;"></video>
+  </div>
+</div>
+
+<!-- ORDER MODAL -->
+<div class="modal-backdrop" id="orderModalBackdrop">
+  <div class="modal">
+    <span class="close" id="modalCloseBtn">&times;</span>
+    <h3>Place Your Order</h3>
+    <p style="color:var(--text-dim);margin-top:-8px;" id="orderProductName"></p>
+    <p class="product-price" id="orderProductPrice"></p>
+    <div class="order-account-box">
+      <div>Bank: <b id="acctBank"></b></div>
+      <div>Account Title: <b id="acctTitle"></b></div>
+      <div>Account Number: <b id="acctNumber"></b></div>
+    </div>
+    <form id="orderForm">
+      <div class="form-group"><label>Full Name *</label><input type="text" id="custName" required></div>
+      <div class="form-group"><label>Phone Number *</label><input type="text" id="custPhone" required></div>
+      <div class="form-group"><label>Delivery Address *</label><textarea id="custAddress" required></textarea></div>
+      <div class="form-group"><label>Car Model (optional)</label><input type="text" id="custCar"></div>
+      <p class="upload-note">After submitting, WhatsApp will open — please attach your payment screenshot there along with the order message.</p>
+      <button type="submit" class="btn btn-whatsapp" style="width:100%;justify-content:center;">Continue to WhatsApp →</button>
+    </form>
+  </div>
+</div>
+
+<a href="#" class="float-wa" onclick="genericWhatsapp();return false;"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.763.462 3.484 1.34 5.001L2 22l5.111-1.334a9.958 9.958 0 0 0 4.892 1.334h.001c5.514 0 9.997-4.483 9.997-9.997 0-2.669-1.04-5.178-2.928-7.066a9.935 9.935 0 0 0-7.069-2.934zm0 18.174h-.001a8.16 8.16 0 0 1-4.166-1.14l-.299-.177-3.032.792.81-2.955-.195-.303a8.145 8.145 0 0 1-1.253-4.394c0-4.512 3.671-8.183 8.185-8.183a8.126 8.126 0 0 1 5.786 2.399 8.126 8.126 0 0 1 2.395 5.787c0 4.512-3.671 8.174-8.23 8.174z"/></svg></a>
+
+<script src="assets/js/store.js?v=10"></script>
+<script src="assets/js/common.js?v=10"></script>
+<script>
+  function renderFeatured(){
+    const products = getProducts().slice(0,3);
+    const wrap = document.getElementById('featuredProducts');
+    wrap.innerHTML = products.map(p=>`
+      <div class="product-card">
+        <div class="img-wrap">
+          <span class="badge">${p.category}</span>
+          <img src="${p.images[0] || (p.videos && p.videos[0])}" alt="${p.title}">
+        </div>
+        <div class="product-body">
+          <h3>${p.title}</h3>
+          <p>${p.description}</p>
+          <div class="product-price">${fmtPrice(p.price)}</div>
+          <div class="product-actions">
+            <a href="product.html?id=${p.id}" class="btn btn-outline">Details</a>
+            <button class="btn btn-accent" onclick='openOrderModal(${JSON.stringify(p)})'>Order Now</button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+  function renderHomeGallery(){
+    const items = getGallery().slice(0,3);
+    const wrap = document.getElementById('homeGalleryPreview');
+    wrap.innerHTML = items.map(g=>`
+      <div class="gallery-card">
+        ${g.type==='video' ? `<video src="${g.url}" muted loop autoplay playsinline></video>` : `<img src="${g.url}" alt="${g.title}">`}
+        <div class="gallery-overlay"><h4>${g.title}</h4></div>
+      </div>
+    `).join('') || `<p style="color:var(--text-dim);grid-column:1/-1;text-align:center;">Gallery coming soon.</p>`;
+  }
+  document.addEventListener('DOMContentLoaded', ()=>{
+    renderFeatured();
+    renderHomeGallery();
+    const heroVideo = document.getElementById('heroBgVideo');
+    if(heroVideo){
+      heroVideo.muted = true;
+      heroVideo.volume = 0;
+      heroVideo.play().catch(()=>{});
+    }
+    const marquee = document.getElementById('heroReviewMarquee');
+    if(marquee){
+      marquee.innerHTML += marquee.innerHTML;
+    }
+  });
+</script>

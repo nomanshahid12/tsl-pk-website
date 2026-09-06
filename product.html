@@ -1,0 +1,156 @@
+<title>Product Details — TSL.pk</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="assets/css/style.css?v=8">
+<style>
+  .pd-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+  .pd-main-media{width:100%;aspect-ratio:4/3;border-radius:16px;border:1px solid var(--border);overflow:hidden;background:var(--card);}
+  .pd-main-media img, .pd-main-media video{width:100%;height:100%;object-fit:cover;display:block;}
+  .pd-thumbs{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+  .pd-thumb{
+    width:76px;height:76px;border-radius:10px;overflow:hidden;cursor:pointer;
+    border:2px solid var(--border);position:relative;flex-shrink:0;
+  }
+  .pd-thumb.active{border-color:var(--accent);}
+  .pd-thumb img, .pd-thumb video{width:100%;height:100%;object-fit:cover;}
+  .pd-thumb .vid-badge{position:absolute;bottom:3px;right:3px;background:rgba(0,0,0,0.65);color:#fff;font-size:0.65rem;padding:1px 5px;border-radius:4px;}
+  .pd-title{font-size:2rem;font-weight:900;margin:0 0 10px;}
+  .pd-price{font-size:1.8rem;color:var(--accent2);font-weight:800;margin-bottom:18px;}
+  .pd-desc{color:var(--text-dim);line-height:1.8;margin-bottom:26px;}
+  @media(max-width:800px){.pd-grid{grid-template-columns:1fr;}}
+</style>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <svg class="logo-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="lgNavBez" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#5b6577"/>
+            <stop offset="55%" stop-color="#262c3b"/>
+            <stop offset="100%" stop-color="#0a0d13"/>
+          </radialGradient>
+          <linearGradient id="lgNavDial" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#ff5b46"/>
+            <stop offset="100%" stop-color="#ffb020"/>
+          </linearGradient>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="url(#lgNavBez)"/>
+        <circle cx="32" cy="32" r="30" fill="none" stroke="#000" stroke-opacity="0.35" stroke-width="1"/>
+        <circle cx="32" cy="32" r="23" fill="#12161f"/>
+        <circle cx="32" cy="32" r="23" fill="none" stroke="url(#lgNavDial)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="95 145" transform="rotate(125 32 32)"/>
+        <g stroke="#8b93a6" stroke-width="1.4" stroke-linecap="round">
+          <line x1="32" y1="13" x2="32" y2="17"/>
+          <line x1="51" y1="32" x2="47" y2="32"/>
+          <line x1="13" y1="32" x2="17" y2="32"/>
+        </g>
+        <line x1="32" y1="32" x2="41" y2="21" stroke="url(#lgNavDial)" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="32" cy="32" r="4.5" fill="url(#lgNavDial)"/>
+        <path d="M10 22 A28 28 0 0 1 54 22" fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      TSL<span class="dot">.</span>PK
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <div class="pd-grid" id="pdContent">Loading...</div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom">© 2026 TSL.pk — All Rights Reserved.</div>
+  </div>
+</footer>
+
+<div class="modal-backdrop" id="orderModalBackdrop">
+  <div class="modal">
+    <span class="close" id="modalCloseBtn">&times;</span>
+    <h3>Place Your Order</h3>
+    <p style="color:var(--text-dim);margin-top:-8px;" id="orderProductName"></p>
+    <p class="product-price" id="orderProductPrice"></p>
+    <div class="order-account-box">
+      <div>Bank: <b id="acctBank"></b></div>
+      <div>Account Title: <b id="acctTitle"></b></div>
+      <div>Account Number: <b id="acctNumber"></b></div>
+    </div>
+    <form id="orderForm">
+      <div class="form-group"><label>Full Name *</label><input type="text" id="custName" required></div>
+      <div class="form-group"><label>Phone Number *</label><input type="text" id="custPhone" required></div>
+      <div class="form-group"><label>Delivery Address *</label><textarea id="custAddress" required></textarea></div>
+      <div class="form-group"><label>Car Model (optional)</label><input type="text" id="custCar"></div>
+      <p class="upload-note">After submitting, WhatsApp will open — please attach your payment screenshot there along with the order message.</p>
+      <button type="submit" class="btn btn-whatsapp" style="width:100%;justify-content:center;">Continue to WhatsApp →</button>
+    </form>
+  </div>
+</div>
+
+<a href="#" class="float-wa" onclick="genericWhatsapp();return false;"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.763.462 3.484 1.34 5.001L2 22l5.111-1.334a9.958 9.958 0 0 0 4.892 1.334h.001c5.514 0 9.997-4.483 9.997-9.997 0-2.669-1.04-5.178-2.928-7.066a9.935 9.935 0 0 0-7.069-2.934zm0 18.174h-.001a8.16 8.16 0 0 1-4.166-1.14l-.299-.177-3.032.792.81-2.955-.195-.303a8.145 8.145 0 0 1-1.253-4.394c0-4.512 3.671-8.183 8.185-8.183a8.126 8.126 0 0 1 5.786 2.399 8.126 8.126 0 0 1 2.395 5.787c0 4.512-3.671 8.174-8.23 8.174z"/></svg></a>
+
+<script src="assets/js/store.js?v=8"></script>
+<script src="assets/js/common.js?v=8"></script>
+<script>
+  const params = new URLSearchParams(location.search);
+  const id = params.get('id');
+  const product = getProducts().find(p=>p.id===id);
+  const el = document.getElementById('pdContent');
+  if(!product){
+    el.innerHTML = `<p style="grid-column:1/-1;text-align:center;color:var(--text-dim);">Product not found. <a href="products.html" style="color:var(--accent2);">Back to products</a></p>`;
+  } else {
+    const media = [
+      ...product.images.map(url=>({type:'image', url})),
+      ...product.videos.map(url=>({type:'video', url}))
+    ];
+    if(media.length===0) media.push({type:'image', url:''});
+
+    el.innerHTML = `
+      <div>
+        <div class="pd-main-media" id="pdMainMedia"></div>
+        <div class="pd-thumbs" id="pdThumbs"></div>
+      </div>
+      <div>
+        <span class="badge" style="position:static;display:inline-block;margin-bottom:14px;">${product.category}</span>
+        <h1 class="pd-title">${product.title}</h1>
+        <div class="pd-price">${fmtPrice(product.price)}</div>
+        <p class="pd-desc">${product.description}</p>
+        <div class="hero-actions">
+          <button class="btn btn-accent" onclick='openOrderModal(${JSON.stringify(product)})'>🛒 Order Now</button>
+          <a href="#" class="btn btn-whatsapp" onclick="genericWhatsapp();return false;">💬 Ask on WhatsApp</a>
+        </div>
+      </div>
+    `;
+
+    function showMedia(index){
+      const m = media[index];
+      const mainEl = document.getElementById('pdMainMedia');
+      mainEl.innerHTML = m.type==='video'
+        ? `<video src="${m.url}" controls autoplay muted></video>`
+        : `<img src="${m.url}" alt="${product.title}">`;
+      document.querySelectorAll('.pd-thumb').forEach((t,i)=>t.classList.toggle('active', i===index));
+    }
+
+    document.getElementById('pdThumbs').innerHTML = media.map((m,i)=>`
+      <div class="pd-thumb" data-index="${i}">
+        ${m.type==='video' ? `<video src="${m.url}" muted></video><span class="vid-badge">▶</span>` : `<img src="${m.url}" alt="thumb">`}
+      </div>
+    `).join('');
+
+    document.querySelectorAll('.pd-thumb').forEach(t=>{
+      t.addEventListener('click', ()=> showMedia(parseInt(t.dataset.index)));
+    });
+
+    showMedia(0);
+  }
+</script>
