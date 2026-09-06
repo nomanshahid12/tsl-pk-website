@@ -1,6 +1,6 @@
 /* TSL.pk simple client-side data store (localStorage based) */
 
-const DEFAULT_WHATSAPP_NUMBER = "923000000000"; // TODO: replace with real WhatsApp number (country code + number, no +)
+const DEFAULT_WHATSAPP_NUMBER = "923107331530";
 const DEFAULT_BANK_ACCOUNT = {
   bank: "Meezan Bank",
   title: "TSL Speedometers",
@@ -33,6 +33,9 @@ const STORE_KEYS = {
 };
 
 function seedIfEmpty() {
+  if (localStorage.getItem('tsl_wa_number') === '923000000000') {
+    localStorage.removeItem('tsl_wa_number');
+  }
   if (!localStorage.getItem(STORE_KEYS.products)) {
     const demoProducts = [
       {
