@@ -1,7 +1,7 @@
 <title>Admin Panel — TSL.pk</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="assets/css/style.css?v=8">
+<link rel="stylesheet" href="assets/css/style.css?v=13">
 <style>
   .hidden{display:none !important;}
   .tab-panel{display:none;}
@@ -251,7 +251,7 @@
   </div>
 </div>
 
-<script src="assets/js/store.js?v=8"></script>
+<script src="assets/js/store.js?v=13"></script>
 <script>
   const SESSION_KEY = 'tsl_admin_session';
 
@@ -310,7 +310,7 @@
     const products = getProducts();
     document.getElementById('productsTableBody').innerHTML = products.map(p=>`
       <tr>
-        <td><img src="${p.images[0] || (p.videos && p.videos[0]) || ''}"></td>
+        <td>${p.images[0] ? `<img src="${p.images[0]}">` : (p.videos[0] ? `<video src="${p.videos[0]}" muted></video>` : `<span style="color:var(--text-dim);">No media</span>`)}</td>
         <td>${p.title}</td>
         <td>${p.category}</td>
         <td>${fmtPrice(p.price)}</td>
